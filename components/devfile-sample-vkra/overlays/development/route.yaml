@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-vkra
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-vkra
+    app.kubernetes.io/part-of: tkrw-pr712-0075-0037-app
+  name: devfile-sample-vkraqyyz
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-vkra
+    weight: null
+status: {}
